@@ -1,8 +1,8 @@
 //------Https------\\
 
-/*if (window.location.protocol != "https:") {
+if (window.location.protocol != "https:") {
   window.location.protocol="https:";
-}*/
+}
 
 function updateTime() {
   const now = new Date();
