@@ -25,8 +25,6 @@ const btn = document.querySelector(".btn");
 let preferNb = 0;
 
 btn.addEventListener("click", () => {
-  let preferSite = prompt("Entrez l'URL de votre site préféré :");
-  let preferImage = prompt("Entrez l'URL de l'image pour votre site préféré (facultatif) :");
 
   function isValidURL(url) {
     try {
@@ -37,15 +35,19 @@ btn.addEventListener("click", () => {
     }
   }
 
-  if (!isValidURL(preferImage)) {
-    preferImage = "Images/site.png";
-    alert("L'image " + preferImage + " n'existe pas.");
-  }  
+  let preferSite = prompt("Entrez l'URL de votre site préféré :");
 
   if (!isValidURL(preferSite)) {
-    preferSite = false;
     alert("Le site " + preferSite + " n'existe pas.")
+    preferSite = false;
   }
+  
+  let preferImage = prompt("Entrez l'URL de l'image pour votre site préféré (facultatif) :");
+
+  if (!isValidURL(preferImage)) {
+    alert("L'image " + preferImage + " n'existe pas.");
+    preferImage = "Images/site.png";
+  }  
 
   if (preferNb <= 22 && preferSite) {
     const preferContent = `
