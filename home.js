@@ -39,10 +39,12 @@ btn.addEventListener("click", () => {
 
   if (!isValidURL(preferImage)) {
     preferImage = "Images/site.png";
-  }
+    alert("L'image " + preferImage + " n'existe pas.");
+  }  
 
   if (!isValidURL(preferSite)) {
-    preferSite = false
+    preferSite = false;
+    alert("Le site " + preferSite + " n'existe pas.")
   }
 
   if (preferNb <= 22 && preferSite) {
